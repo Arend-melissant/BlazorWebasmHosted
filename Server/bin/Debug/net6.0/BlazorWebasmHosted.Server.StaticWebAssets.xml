@@ -1,0 +1,6 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="_content/Radzen.Blazor" Path="C:\Users\arend\.nuget\packages\radzen.blazor\3.3.2\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/" Path="C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Client\bin\Debug\net6.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Client\obj\Debug\net6.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="/" Path="C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Client\wwwroot\" />
+</StaticWebAssets>

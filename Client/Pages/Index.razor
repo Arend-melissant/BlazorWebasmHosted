@@ -1,0 +1,61 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.SignalR.Client
+@inject NavigationManager NavigationManager
+@implements IAsyncDisposable
+
+@code {
+    string text = "Hi";
+}
+
+<RadzenTextBox @bind-Value="@userInput" />
+<RadzenTextBox @bind-Value="@messageInput" />
+
+<RadzenButton Click=@(args =>Send()) Text="Go"></RadzenButton>
+
+<hr>
+<h3>@userInput</h3>
+
+<ul id="messagesList">
+    @foreach (var message in messages)
+    {
+        <li>@message</li>
+    }
+</ul>
+
+@code {
+    private HubConnection hubConnection;
+    private List<string> messages = new List<string>();
+    private string userInput { get; set; }
+    private string messageInput { get; set; }
+    bool showLoader = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubConnection = new HubConnectionBuilder()
+        .WithUrl(NavigationManager.ToAbsoluteUri("/chathub"))
+        .Build();
+
+        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+        {
+            var encodedMsg = $"{user}: {message}";
+            messages.Add(encodedMsg);
+            StateHasChanged();
+        });
+
+        userInput = "Arend";
+        messageInput = "Test";
+
+        await hubConnection.StartAsync();
+    }
+
+    async Task Send() => await hubConnection.SendAsync("SendMessage", userInput, messageInput);
+ 
+
+    public bool IsConnected =>
+    hubConnection.State == HubConnectionState.Connected;
+
+    public async ValueTask DisposeAsync()
+    {
+        await hubConnection.DisposeAsync();
+    }
+}

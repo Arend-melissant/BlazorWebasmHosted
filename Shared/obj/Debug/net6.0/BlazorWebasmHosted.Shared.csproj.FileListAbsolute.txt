@@ -1,0 +1,12 @@
+C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Shared\bin\Debug\net6.0\BlazorWebasmHosted.Shared.deps.json
+C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Shared\bin\Debug\net6.0\BlazorWebasmHosted.Shared.dll
+C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Shared\bin\Debug\net6.0\ref\BlazorWebasmHosted.Shared.dll
+C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Shared\bin\Debug\net6.0\BlazorWebasmHosted.Shared.pdb
+C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Shared\obj\Debug\net6.0\BlazorWebasmHosted.Shared.csproj.AssemblyReference.cache
+C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Shared\obj\Debug\net6.0\BlazorWebasmHosted.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Shared\obj\Debug\net6.0\BlazorWebasmHosted.Shared.AssemblyInfoInputs.cache
+C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Shared\obj\Debug\net6.0\BlazorWebasmHosted.Shared.AssemblyInfo.cs
+C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Shared\obj\Debug\net6.0\BlazorWebasmHosted.Shared.csproj.CoreCompileInputs.cache
+C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Shared\obj\Debug\net6.0\BlazorWebasmHosted.Shared.dll
+C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Shared\obj\Debug\net6.0\ref\BlazorWebasmHosted.Shared.dll
+C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Shared\obj\Debug\net6.0\BlazorWebasmHosted.Shared.pdb

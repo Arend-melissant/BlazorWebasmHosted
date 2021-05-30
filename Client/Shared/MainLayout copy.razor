@@ -1,0 +1,15 @@
+@inherits LayoutComponentBase
+
+<RadzenMenu>
+    <RadzenMenuItem Text="General" Icon="home">
+        <RadzenMenuItem Text="Students" Path="students" Icon="account_circle"></RadzenMenuItem>
+        <RadzenMenuItem Text="About" Path="about" Icon="line_weight"></RadzenMenuItem>
+    </RadzenMenuItem>
+</RadzenMenu>
+
+<div class="main">
+    <div class="content px-4">
+        @Body
+    </div>
+</div>
+
