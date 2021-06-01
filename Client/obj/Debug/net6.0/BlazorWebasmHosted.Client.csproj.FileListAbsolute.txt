@@ -674,3 +674,6 @@ C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Clien
 C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Client\bin\Debug\net6.0\wwwroot\_framework\System.Linq.Dynamic.Core.dll
 C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Client\obj\Debug\net6.0\build-gz\9+ukQf8E.gz
 C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Client\obj\Debug\net6.0\build-gz\VjhNlqM8.gz
+C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Client\bin\Debug\net6.0\wwwroot\_framework\Blazority.dll.gz
+C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Client\bin\Debug\net6.0\wwwroot\_framework\Blazority.dll
+C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Client\obj\Debug\net6.0\build-gz\p5LE190y.gz

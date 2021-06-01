@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wppBerUTJSlYT1jTD6xVgZ+F0vTTEIRD135ZlWWnuCQ+Kl8zcikDIeL/CymuN5tg7ICrjcLBd71Cuamz/N/Jaw==",
+  "dgSpecHash": "aA4dGq0rVa68hCLkdNk/1OxORr9QwJyB1755QyIwuh3fzknt1BSbstJ+tMBTludaSTN05IaFFux/lpMIFwtxkQ==",
   "success": true,
   "projectFilePath": "C:\\apps\\GO\\github.com\\arendmelissant\\BlazorWebasmHosted\\BlazorWebasmHosted\\Server\\BlazorWebasmHosted.Server.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\arend\\.nuget\\packages\\blazority\\0.7.4\\blazority.0.7.4.nupkg.sha512",
     "C:\\Users\\arend\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\arend\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.0-preview.4.21253.5\\microsoft.aspnetcore.authorization.6.0.0-preview.4.21253.5.nupkg.sha512",
     "C:\\Users\\arend\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.0-preview.4.21253.5\\microsoft.aspnetcore.components.6.0.0-preview.4.21253.5.nupkg.sha512",

@@ -7,10 +7,13 @@
     string text = "Hi";
 }
 
-<RadzenTextBox @bind-Value="@userInput" />
+<Form Model="@model">
+    @* <Text Label="Label" Disabled="@disabled" @bind-Value="model.userInput" HelpText="@($"The current text is {model.Name}")"></Text> *@
+</Form>
+@* <RadzenTextBox @bind-Value="@userInput" />
 <RadzenTextBox @bind-Value="@messageInput" />
 
-<RadzenButton Click=@(args =>Send()) Text="Go"></RadzenButton>
+<RadzenButton Click=@(args =>Send()) Text="Go"></RadzenButton> *@
 
 <hr>
 <h3>@userInput</h3>
@@ -23,6 +26,14 @@
 </ul>
 
 @code {
+    private DemoModel model = new DemoModel();
+    private bool disabled = false;
+
+    public class DemoModel
+    {
+        public string Name { get; set; }
+    }
+
     private HubConnection hubConnection;
     private List<string> messages = new List<string>();
     private string userInput { get; set; }

@@ -4,51 +4,96 @@
 @inject HttpClient Http
 @inject IState State
 
-<RadzenSwitch @bind-Value=@showGrid Style="margin-bottom: 20px" />
-<h1>Students</h1>
+<Form Model="@model">
+    <CheckboxContainer Label="Show/hide" HelpText="Show/hide the table">
+        <Checkbox @bind-Value="@model.ShowTable" />
+    </CheckboxContainer>
+    <h1>Students</h1>
 
     @if (selectedItem?.Any() == true)
     {
-    <div style="margin-left: 16px">
-        Selected Employee: @selectedItem[0].Firstname 
-    </div>
+        <div style="margin-left: 16px">
+            Selected Employee: @selectedItem[0].Firstname
+        </div>
     }
 
-@if (State.ErrorMsg != "")
-{
-    <h1>@State.ErrorMsg</h1>
-}
-@* else
-{
-    <h1>All OK</h1>
-} *@
-
-@if (Data == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    @if (showGrid)
+    @if (State.ErrorMsg != "")
     {
-        <RadzenDataGrid AllowColumnResize="true" FilterMode="FilterMode.Advanced" PageSize="5" AllowPaging="true" Data="@Data" TItem="Student" SelectionMode="DataGridSelectionMode.Single" @bind-Value=@selectedItem LogicalFilterOperator="LogicalFilterOperator.Or">
-            <Columns>
-                <RadzenDataGridColumn TItem="Student" Property="Firstname" Filterable="false" Title="Voornaam" Frozen="true" Width="100px" TextAlign="TextAlign.Left" />
+        <Alert Type="AlertType.Warning">
+            <AlertItem>
+                <AlertText>This is a Warning: @State.ErrorMsg</AlertText>
+            </AlertItem>
+        </Alert>
+    }
+    @* else
+        {
+        <h1>All OK</h1>
+        } *@
+
+    @if (Data == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        @if (model.ShowTable)
+        {
+            @if (LastClickedRow != null)
+            {
+                <Alert Type="AlertType.Info" Closable="false">Row (Firstname: @LastClickedRow.Firstname, Name:
+                    @LastClickedRow.Lastname) was clicked.</Alert>
+            }
+
+            <Datagrid TRowData="Student" Items="Data" RowClicked="(u) => RowClicked(u)" RowClass="DynamicRowClass">
+                <DatagridColumn Title="firstname" TRowData="Student" Field="c => c.Firstname" CanSort="true" />
+                <DatagridColumn Title="lastname" TRowData="Student" Field="c => c.Lastname" CanSort="true" />
+                <DatagridColumn TRowData="Student" Field="c => c.Class.Classname" CanSort="true">
+                    <HeaderTemplate>
+                        <clr-icon shape="building"></clr-icon> Company
+                    </HeaderTemplate>
+                </DatagridColumn>
+                @* <DatagridColumn TRowData="Student" Title="Creation Date"></DatagridColumn> *@
+
+                <DatagridFooter TRowData="Student">
+                    <DatagridFooterDescription TRowData="Student">@Data.Count students</DatagridFooterDescription>
+                </DatagridFooter>
+            </Datagrid>
+
+            @* <RadzenDataGrid AllowColumnResize="true" FilterMode="FilterMode.Advanced" PageSize="5" AllowPaging="true"
+                Data="@Data" TItem="Student" SelectionMode="DataGridSelectionMode.Single" @bind-Value=@selectedItem
+                LogicalFilterOperator="LogicalFilterOperator.Or">
+                <Columns>
+                <RadzenDataGridColumn TItem="Student" Property="Firstname" Filterable="false" Title="Voornaam" Frozen="true"
+                Width="100px" TextAlign="TextAlign.Left" />
                 <RadzenDataGridColumn TItem="Student" Property="Lastname" Title="Achternaam" Width="100px"/>
                 <RadzenDataGridColumn TItem="Student" Property="Student.Class.Classname" Title="Klas" Width="100px"/>
-            </Columns>
-        </RadzenDataGrid>
+                </Columns>
+                </RadzenDataGrid> *@
+        }
     }
-}
+
+</Form>
 
 @code {
+    private DemoModel model = new DemoModel();
+    public class DemoModel
+    {
+        public bool ShowTable { get; set; } = true;
+    }
+
+    public Student LastClickedRow { get; set; }
+    public void RowClicked(Blazority.Shared.MouseEventData<Student> e)
+    {
+        LastClickedRow = e.Data;
+    }
     private List<Student> Data;
     private IList<Student> selectedItem;
-    
+
     private bool showGrid = true;
 
     protected override async Task OnInitializedAsync()
     {
+        Console.WriteLine("get data");
         Data = (await Http.GetFromJsonAsync<List<Student>>("api/Students/Get"));
     }
 
@@ -56,6 +101,14 @@ else
     {
         State.Notify += OnNotify;
     }
+
+    public string DynamicRowClass(Student row, int index)
+    {
+        // NOTE: row-selected class is a built-in datagrid class
+        return row == LastClickedRow ? "row-selected" : "";
+    }
+
+
 
     public void OnNotify()
     {

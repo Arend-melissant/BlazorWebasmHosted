@@ -48,3 +48,4 @@ C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Serve
 C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Server\bin\Debug\net6.0\Npgsql.dll
 C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Server\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Server\obj\Debug\net6.0\BlazorWebasmHosted.Server.csproj.AssemblyReference.cache
+C:\apps\GO\github.com\arendmelissant\BlazorWebasmHosted\BlazorWebasmHosted\Server\bin\Debug\net6.0\Blazority.dll

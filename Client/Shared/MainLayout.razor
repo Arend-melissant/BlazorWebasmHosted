@@ -1,49 +1,32 @@
 @inherits BlazorWebasmHosted.Client.Shared.MainLayoutComponent
 @namespace BlazorWebasmHosted.Client.Shared
 
-<RadzenDialog />
-<RadzenNotification />
-<RadzenTooltip />
-<RadzenContextMenu />
-
-<RadzenHeader>
-  <ChildContent>
-    <div class="row justify-content-start align-items-center">
-      <div class="col-6 d-flex align-items-center">
-        <RadzenSidebarToggle Click="@SidebarToggle0Click">
-        </RadzenSidebarToggle>
-        <RadzenLabel Text="TestApp">
-        </RadzenLabel>
-      </div>
-      <div class="col-6 text-right">
+<div class="main-container">
+  <div class="content-container">
+    <div class="content-area">
+      <Tabs>
+        <Tab>
+          <Header>Tab 1</Header>
+          <ChildContent>
+            <p>This is the contents of tab 1.</p>
+            @Body
+          </ChildContent>
+        </Tab>
+        <Tab>
+          <Header>Tab 2</Header>
+          <ChildContent>
+            <p>This is the contents of tab 2.</p>
+          </ChildContent>
+        </Tab>
+        <Tab>
+          <Header>Tab 3</Header>
+          <ChildContent>
+          </ChildContent>
+        </Tab>
+      </Tabs>
+      <div cds-layout="vertical gap:md align:bottom">
+        <Button @onclick="ShowError" Label=@ErrorButtonText Variant="Primary"></Button>
       </div>
     </div>
-  </ChildContent>
-</RadzenHeader>
-<RadzenBody @ref="body0">
-  <ChildContent>
-    <RadzenContentContainer Name="main">
-    @Body
-    </RadzenContentContainer>
-  </ChildContent>
-</RadzenBody>
-<RadzenSidebar @ref="sidebar0">
-  <ChildContent>
-    <RadzenPanelMenu style="height: 100%">
-      <ChildContent>
-        <RadzenPanelMenuItem Text="Home" Path="/">
-        </RadzenPanelMenuItem>
-        <RadzenPanelMenuItem Text="Data" Path="/students">
-        </RadzenPanelMenuItem>
-      </ChildContent>
-    </RadzenPanelMenu>
-  </ChildContent>
-</RadzenSidebar>
-<RadzenFooter>
-  <ChildContent>
-    <RadzenLabel Text="TestApp, Copyright Ⓒ 2021">
-    </RadzenLabel>
-    <RadzenButton Click=@(args => ShowError()) Text=@ErrorButtonText Style="margin-bottom: 20px; width: 150px" >
-    </RadzenButton>
-  </ChildContent>
-</RadzenFooter>
+  </div>
+</div>
