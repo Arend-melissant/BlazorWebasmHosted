@@ -9,6 +9,9 @@
 
 <Form Model="@model">
     @* <Text Label="Label" Disabled="@disabled" @bind-Value="model.userInput" HelpText="@($"The current text is {model.Name}")"></Text> *@
+    <div class="clr-align-self-end">
+        <Button @onclick="Send" Label=Send Variant="Primary"></Button>
+      </div>
 </Form>
 @* <RadzenTextBox @bind-Value="@userInput" />
 <RadzenTextBox @bind-Value="@messageInput" />
